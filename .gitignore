@@ -7053,3 +7053,12 @@ entorno/Scripts/python.exe
 entorno/Scripts/pythonw.exe
 entorno/Scripts/sqlformat.exe
 entorno/Scripts/__pycache__/django-admin.cpython-39.pyc
+Tuto1/MiApi/MiApi/__pycache__/wsgi.cpython-39.pyc
+tuto2/tutorial/administrador/__pycache__/__init__.cpython-39.pyc
+tuto2/tutorial/administrador/__pycache__/serializers.cpython-39.pyc
+tuto2/tutorial/administrador/__pycache__/views.cpython-39.pyc
+tuto2/tutorial/tutorial/__pycache__/__init__.cpython-39.pyc
+tuto2/tutorial/tutorial/__pycache__/settings.cpython-39.pyc
+tuto2/tutorial/tutorial/__pycache__/urls.cpython-39.pyc
+tuto2/tutorial/tutorial/__pycache__/wsgi.cpython-39.pyc
+Tuto1/MiApi/MiApi/__pycache__/wsgi.cpython-39.pyc
