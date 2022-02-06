@@ -1,10 +1,44 @@
-#librerias modo 2
+#librerias modo 3 Vistas con clases
+from snippets.models import Snippet
+from snippets.serializers import SnippetSerializer
+from django.http import Http404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+
+
+class SnippetList(APIView):
+    
+    def get(self,request,format=None):
+        snipppets = Snippet.objects.all()
+        serializer = SnippetSerializer(snipppets, many=True)
+        return Response(serializer.data)
+    
+    def post(self,request,format=None):
+        serializer = SnippetSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status= status.HTTP_201_CREATED)
+        return Response(serializer.errors, status= status.HTTP_400_BAD_REQUEST)
+
+
+class SnippetDetail(APIView):
+
+    def get_object(self, pk):
+        try:
+            return Snippet.objects.get(pk=pk)
+        except Snippet.DoesNotExist:
+            raise Http404
+
+
+
+'''
+#librerias modo 2 Vistas con funciones
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
-from tutoDjangoRest.tutorial.snippets import serializers
 
 
 
@@ -46,6 +80,7 @@ def snippet_detail(request, pk , format = None):
         snippet.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
 
+'''
 
 '''
 #librerias modo 1
